@@ -1,0 +1,5 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  Favorite Color: <input type="text" [formControl]="color">
+  <input type="submit" [disabled]="!myForm.valid" />
+</form>
+

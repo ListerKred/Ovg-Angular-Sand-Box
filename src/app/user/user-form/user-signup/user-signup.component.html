@@ -1,0 +1,57 @@
+<div class="content">
+    <div class="header">
+      <mat-toolbar>
+          <mat-toolbar-row>
+            <span>Inscription</span>
+          </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+    <div class="signup-form">
+
+      <form [formGroup]="signup" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Nom d'utilisateur</mat-label>
+            <input matInput placeholder="Nom d'utilisateur" formControlName="username">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Adresse email</mat-label>
+            <input matInput placeholder="Adresse email" formControlName="email">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Mot de passe</mat-label>
+            <input matInput placeholder="Mot de passe" formControlName="password">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </p>
+        <!-- <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Confirmez le Mot de passe</mat-label>
+            <input matInput placeholder="Confirmez le mot de passe" formControlName="confirmPassword">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </!-->
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Date de naissance" formControlName="birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </p>
+        <span class="spacer"></span>
+        <button class="btn" mat-raised-button type="submit" [disabled]="!signup.valid">Continuer</button>
+      </form>
+    </div>
+</div>
